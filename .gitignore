@@ -1,0 +1,5 @@
+# Binarios
+*.exe
+*.dll
+*.so
+*.dylib
