@@ -1,0 +1,6 @@
+https://docs.mongodb.com/?_ga=2.9613365.1691538741.1511140078-1263531069.1510947018
+https://golang.org/pkg/net/http/
+https://golang.org/pkg/html/templates/
+https://golang.org/pkg/text/templates/
+https://golang.org/doc/
+stack overflow
