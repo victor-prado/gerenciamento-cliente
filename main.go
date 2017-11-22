@@ -6,16 +6,17 @@ import(
   "net/http"
 	"html/template"
 	"gopkg.in/mgo.v2"
+  "gopkg.in/mgo.v2/bson"
 )
 
 //Struct para armazenar informações dos clientes
 type Cliente struct {
   Nome string
   Email string
-  Nascimento string
-  Documento string
+  Nasc string
+  Doc string
   Tipo string
-  Endereco string
+  End string
 }
 
 //Struct para armazenar o resultado de uma query de clientes
@@ -34,9 +35,14 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
   }
   //Abre a coleção cliente
   colecao := sessao.DB("empresa").C("cliente")
-  //Aqui fazemos a query de todos os clientes do banco e armazenamos em uma struct Clientes
+
+
+  //Extrair o texto da form submetida pelo usuario
+  r.ParseForm()
+	nome := r.PostFormValue("busca")
+  //Realizar a query pelo texto inserido
   clientes := Clientes{}
-  resultado := colecao.Find(nil).Iter()
+  resultado := colecao.Find(bson.M{"nome": bson.RegEx{nome, ""}}).Iter()
   cliente := Cliente{}
   for resultado.Next(&cliente) {
     clientes.Resultado = append(clientes.Resultado, cliente)

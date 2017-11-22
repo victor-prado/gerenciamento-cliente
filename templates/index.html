@@ -6,6 +6,7 @@
       body {font-family:sans-serif; color:#4f494f;}
       form input {border-radius: 7.5px;}
       h5 {display: inline;}
+      .info{padding-bottom: 30px}
       .label {text-align: right}
       .guestbook {float:left; padding-top: 10px}
       .name {width: 100%; float:left; padding:3px;}
@@ -23,11 +24,19 @@
         </form>
       </div>
       <div class="guestbook">
-        <h3>Guests:</h3>
+        <h3>Clientes:</h3>
         {{range .Resultado}}
-        <form method="post" class="form" action="/">
-          <h5>Nome:</h5> <input type="text" name="nome" value={{.Nome}}>,
-          <h5>Email:</h5> <input type="text" name="email" value={{.Email}}>
+        <form method="post" class="form info" action="/">
+          <div>
+            <h5>Nome:</h5> <input type="text" name="nome" value={{.Nome}}>,
+            <h5>Email:</h5> <input type="text" name="email" value={{.Email}}>,
+            <h5>Tipo:</h5> <input type="text" name="tipo" value={{.Tipo}}>
+          </div>
+          <div>
+            <h5>Nascimento:</h5> <input type="text" name="nasc" value={{.Nasc}}>,
+            <h5>Endereço:</h5> <input type="text" name="end" value={{.End}}>,
+            <h5>Documento:</h5> <input type="text" name="doc" value={{.Doc}}>
+          </div>
         </form>
         {{end}}
       </div>
