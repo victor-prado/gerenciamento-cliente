@@ -11,6 +11,11 @@ Requisitos pré-instalados
 
 Execução
 --------
+Para inserir automaticamente alguns clientes genéricos (não é necessário para
+o funcionamento do programa) no banco de dados digite:
+
+    go run makedb.go
+
 No diretório raiz do repositório, digite:
 
     go build main.go
