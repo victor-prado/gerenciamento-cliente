@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Cadastro</title>
+    <style type="text/css">
+      body {font-family:sans-serif; color:#4f494f;}
+      form input {border-radius: 7.5px;}
+      h5 {display: inline;}
+      .info{padding-bottom: 30px}
+      .label {text-align: right}
+      .guestbook {float:left; padding-top: 10px}
+      .name {width: 100%; float:left; padding:3px;}
+      .wrapper {padding-left: 25px; padding-top:20px}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="post" class="form info" action="/cadastro">
+          <h5>Nome:</h5> <input type="text" id="nome" name="nome">,
+          <h5>Email:</h5> <input type="text" name="email">,
+          <h5>Tipo:</h5> <input type="text" name="tipo">
+          <h5>Nascimento:</h5> <input type="text" name="nasc">,
+          <h5>Endereço:</h5> <input type="text" name="end">,
+          <h5>Documento:</h5> <input type="text" name="doc">
+          <input type="submit" value='Criar'/>
+      </form>
+      <a href="/">página inicial</a>
+    </div>
+  </body>
+</html>
