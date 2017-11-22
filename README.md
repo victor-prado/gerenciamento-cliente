@@ -25,4 +25,4 @@ Email: victor.prasa@gmail.com
 
 Licensa
 -------
-Este software é lisenciado pela MIT License. (Veja Lisense)
+Este software é licensiado pela MIT License. (Veja License)
