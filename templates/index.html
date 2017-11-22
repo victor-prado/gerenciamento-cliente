@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gerenciador de Clientes</title>
+    <style type="text/css">
+      body {font-family:sans-serif; color:#4f494f;}
+      form input {border-radius: 7.5px;}
+      h5 {display: inline;}
+      .label {text-align: right}
+      .guestbook {float:left; padding-top: 10px}
+      .name {width: 100%; float:left; padding:3px;}
+      .wrapper {padding-left: 25px; padding-top:20px}
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>Gerenciador de Clientes</h1>
+      <div class="guestbook_input">
+        <form method="post" class="form" action="/">
+          Nome: <input type="text" name="busca"/>
+          <input type="submit" value='Buscar'/>
+        </form>
+      </div>
+      <div class="guestbook">
+        <h3>Guests:</h3>
+        {{range .Resultado}}
+        <form method="post" class="form" action="/">
+          <h5>Nome:</h5> <input type="text" name="nome" value={{.Nome}}>,
+          <h5>Email:</h5> <input type="text" name="email" value={{.Email}}>
+        </form>
+        {{end}}
+      </div>
+    </div>
+  </body>
+</html>
